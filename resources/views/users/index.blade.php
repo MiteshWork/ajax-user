@@ -53,17 +53,6 @@
             }
         });
 
-        // Check login status
-        function checkLogin() {
-            const token = localStorage.getItem('token');
-            if (!token) {
-                alert('Unauthorized access! Please log in.');
-                window.location.href = "/login";
-            }
-        }
-
-        checkLogin();
-
         // Logout Function
         $('#logoutButton').on('click', function() {
             localStorage.removeItem('token');

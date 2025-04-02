@@ -9,4 +9,7 @@ Route::get('/', function () {
 
 Route::view('/login', 'auth.login');
 Route::view('/register', 'auth.register');
-Route::view('/users', 'users.index');
+
+Route::middleware('auth.check')->group(function () {
+    Route::view('/users', 'users.index');
+});
